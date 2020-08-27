@@ -1,8 +1,3 @@
-
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
 body {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -32,7 +27,6 @@ body {
 .footer li {
   line-height: 20px;
 }
-
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -70,7 +64,6 @@ body {
   height: 32rem;
 }
 
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -83,10 +76,9 @@ body {
   font-weight: normal;
 }
 .marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
 }
-
 
 /* Featurettes
 ------------------------- */
@@ -99,9 +91,8 @@ body {
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
-  letter-spacing: -.05rem;
+  letter-spacing: -0.05rem;
 }
-
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -173,7 +164,7 @@ h1 {
  * Dashboard
  */
 
- /* Placeholders */
+/* Placeholders */
 .placeholders {
   padding-bottom: 3rem;
 }

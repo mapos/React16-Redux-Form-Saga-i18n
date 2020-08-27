@@ -1,11 +1,11 @@
-import { push } from 'react-router-redux'
-import { all, put, takeLatest, fork, call } from 'redux-saga/effects'
+import { push } from "react-router-redux";
+import { all, put, takeLatest, fork, call } from "redux-saga/effects";
 
-import api from './auth.api'
+import api from "./auth.api";
 
-import {AUTH_UNSET, REFRESH_TOKEN} from './auth.constants'
+import { AUTH_UNSET, REFRESH_TOKEN } from "./auth.constants";
 
-import { setAuth } from './auth.actions'
+import { setAuth } from "./auth.actions";
 
 // import {unsetAuth} from './auth.actions'
 
@@ -14,23 +14,23 @@ import { setAuth } from './auth.actions'
  * @param  {object} action         Logout function
  */
 
-export function * refreshTokenAsync (action) {
+export function* refreshTokenAsync(action) {
   // We refresh Token
-  const response = yield call(api.refreshToken, action.refreshToken)
+  const response = yield call(api.refreshToken, action.refreshToken);
 
-  const token = response.data.token
-  const refreshToken = response.data.refreshToken
+  const token = response.data.token;
+  const refreshToken = response.data.refreshToken;
 
   // yield put(LOGIN.success(response))
-  yield put(setAuth(token, refreshToken))
+  yield put(setAuth(token, refreshToken));
 }
 
 /**
-* Watch Login User
-*/
+ * Watch Login User
+ */
 
-export function * watchRefreshToken () {
-  yield takeLatest(REFRESH_TOKEN, refreshTokenAsync)
+export function* watchRefreshToken() {
+  yield takeLatest(REFRESH_TOKEN, refreshTokenAsync);
 }
 
 /**
@@ -38,31 +38,32 @@ export function * watchRefreshToken () {
  * @param  {object} action         Logout function
  */
 
-export function * logoutUserAsync (action) {
-    // yield put(unsetAuth())
+export function* logoutUserAsync(action) {
+  // yield put(unsetAuth())
 
-    // This function is at saga because later will add logout date/time
-    // !! TODO: Logout date/time.
+  // This function is at saga because later will add logout date/time
+  // !! TODO: Logout date/time.
 
-    // remove our token
+  // remove our token
   // localStorage.removeItem('token')
 
-    // redirect to the /login screen
-  yield put(push('/'))
+  // redirect to the /login screen
+  yield put(push("/"));
 }
 
 /**
  * Watch Login User
  */
 
-export function * watchLogoutUser () {
-  yield takeLatest(AUTH_UNSET, logoutUserAsync)
+export function* watchLogoutUser() {
+  return; //Change later as below is redirecting all the time so no page switching works
+  yield takeLatest(AUTH_UNSET, logoutUserAsync);
 }
 
 /**
  * Root Saga Function
  */
 
-export default function * rootSaga () {
-  yield all([fork(watchLogoutUser), fork(watchRefreshToken)])
+export default function* rootSaga() {
+  yield all([fork(watchLogoutUser), fork(watchRefreshToken)]);
 }
