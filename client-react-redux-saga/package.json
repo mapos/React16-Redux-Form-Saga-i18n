@@ -14,7 +14,7 @@
   "author": "Marcin Polak <mapoart@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bootstrap": "4.5.2",
     "classnames": "^2.2.6",
     "css-loader": "^4.2.2",
