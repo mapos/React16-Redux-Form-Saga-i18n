@@ -34,7 +34,7 @@
     "babel-jest": "^26.3.0",
     "cross-env": "^7.0.2",
     "jest": "^26.4.2",
-    "marked": "^1.1.1",
+    "marked": "^2.0.0",
     "mocha": "^8.1.3",
     "moment": "^2.27.0",
     "mongoose-fakery": "^0.1.7",
